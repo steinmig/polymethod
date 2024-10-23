@@ -1,0 +1,5 @@
+numpydoc
+recommonmark
+sphinx
+sphinx-rtd-theme
+sphinx-copybutton
