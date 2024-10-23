@@ -35,7 +35,7 @@ jobs:
       - name: Test with pytest
         run: |
          pip install pytest pytest-cov
-         pytest overloading --doctest-modules --junitxml=junit/test-results.xml --cov=overloading --cov-report=xml --cov-report=html
+         pytest overloading --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml --cov=overloading --cov-report=xml --cov-report=html
       - name: Upload pytest test results
         uses: actions/upload-artifact@v4
         with:
