@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 import sys
 
 
-min_version = (3, 6)
+min_version = (3, 8)
 if sys.version_info < min_version:
     error = """
 Polymethod does not support Python {0}.{1}.
