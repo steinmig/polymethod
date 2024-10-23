@@ -32,7 +32,7 @@ with open(path.join(here, 'polymethod', '_version.py')) as f:
 setup(
     name="polymethod",
     version=__version__,
-    description="Library to enable function polymethod in Python",
+    description="Library to enable function overloading in Python",
     long_description=readme,
     author="Miguel Steiner",
     author_email="steiner.mig@gmail.com",
