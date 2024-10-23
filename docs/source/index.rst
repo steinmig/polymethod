@@ -1,5 +1,5 @@
-Overloading
-===========
+Polymethod
+==========
 
 .. toctree::
    :maxdepth: 3

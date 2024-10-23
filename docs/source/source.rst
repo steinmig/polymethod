@@ -7,4 +7,4 @@ Source code documentation
    :toctree: generated
    :recursive:
 
-   overloading
+   polymethod

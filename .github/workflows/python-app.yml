@@ -1,4 +1,4 @@
-name: Python overloading package
+name: Test Polymethod package
 
 on: [push]
 
@@ -27,15 +27,15 @@ jobs:
       - name: Install documentation requirements
         run: python -m pip install -r docs/requirements.txt
       - name: Test with flake8
-        run: flake8 overloading
+        run: flake8 polymethod
       - name: Test with mypy
-        run: mypy overloading
+        run: mypy polymethod
       - name: Test with pylint
-        run: pylint overloading
+        run: pylint polymethod
       - name: Test with pytest
         run: |
          pip install pytest pytest-cov
-         pytest overloading --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml --cov=overloading --cov-report=xml --cov-report=html
+         pytest polymethod --doctest-modules --junitxml=junit/test-results-${{ matrix.python-version }}.xml --cov=polymethod --cov-report=xml --cov-report=html
       - name: Upload pytest test results
         uses: actions/upload-artifact@v4
         with:

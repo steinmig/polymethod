@@ -3,84 +3,85 @@
 
 from typing import List, Dict, Set, Tuple, Optional, Union, TypeVar, Iterable
 
-from overloading import overload, OverloadMeta, NoMatchingOverload
+from polymethod import overload, OverloadMeta, NoMatchingOverload
 
 T = TypeVar("T", List[int], Set[float])
-X = 1
 
 
 class A(metaclass=OverloadMeta):
 
-    @staticmethod
-    @overload
-    def foo(x: int) -> int:
-        return X + x
+    x = 1
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: str) -> str:
-        return str(X) + x
+    def foo(cls, x: int) -> int:
+        return cls.x + x
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: float) -> float:
-        return X + x + 0.1
+    def foo(cls, x: str) -> str:
+        return str(cls.x) + x
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: int, y: str) -> str:
-        return str(X) + str(x) + y
+    def foo(cls, x: float) -> float:
+        return cls.x + x + 0.1
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Union[int, str], y: Union[int, str]) -> str:
-        return str(X) + str(x) + str(y) + "!"
+    def foo(cls, x: int, y: str) -> str:
+        return str(cls.x) + str(x) + y
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: List[int]) -> int:
-        return X + sum(x)
+    def foo(cls, x: Union[int, str], y: Union[int, str]) -> str:
+        return str(cls.x) + str(x) + str(y) + "!"
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Dict[str, int]) -> int:
-        return X + sum(x.values())
+    def foo(cls, x: List[int]) -> int:
+        return cls.x + sum(x)
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Set[int]) -> int:
-        return X + sum(x) + 1
+    def foo(cls, x: Dict[str, int]) -> int:
+        return cls.x + sum(x.values())
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Tuple[int, int]) -> int:
-        return X + sum(x) + 2
+    def foo(cls, x: Set[int]) -> int:
+        return cls.x + sum(x) + 1
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Optional[int]) -> int:
+    def foo(cls, x: Tuple[int, int]) -> int:
+        return cls.x + sum(x) + 2
+
+    @classmethod
+    @overload
+    def foo(cls, x: Optional[int]) -> int:
         if x is None:
             x = 0
-        return X + x
+        return cls.foo(x)
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Iterable[str]) -> float:
-        return str(X) + ";".join(x)
+    def foo(cls, x: Iterable[str]) -> float:
+        return str(cls.x) + ";".join(x)
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: T) -> int:
-        return X + sum(x) + 0.1
+    def foo(cls, x: T) -> int:
+        return cls.x + sum(x) + 0.1
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x: Dict[Tuple[int, ...], List[int]]) -> int:
+    def foo(cls, x: Dict[Tuple[int, ...], List[int]]) -> int:
         return sum(sum(v) for v in x.values())
 
-    @staticmethod
+    @classmethod
     @overload
-    def foo(x) -> None:  # pylint: disable=unused-argument
+    def foo(cls, x) -> None:  # pylint: disable=unused-argument
         return None
 
 

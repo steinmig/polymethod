@@ -8,7 +8,7 @@ recursive-exclude * *.py[co]
 
 recursive-include docs *.rst conf.py Makefile make.bat
 
-include overloading/_version.py
+include polymethod/_version.py
 
 # Remove test files from install:
 prune tests

@@ -3,7 +3,7 @@
 
 from typing import List, Dict, Set, Tuple, Optional, Union, TypeVar, Iterable
 
-from overloading import overload, OverloadMeta, NoMatchingOverload
+from polymethod import overload, OverloadMeta, NoMatchingOverload
 
 T = TypeVar("T", List[int], Set[float])
 

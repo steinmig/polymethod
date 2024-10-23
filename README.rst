@@ -19,14 +19,14 @@ This project has no dependencies and can be installed with pip either locally
 
 .. code-block:: bash
 
-   git clone https://github.com/steinmig/overloading.git
-   pip install ./overloading
+   git clone https://github.com/steinmig/polymethod.git
+   pip install ./polymethod
 
 or from PyPI
 
 .. code-block:: bash
 
-   pip install overloading
+   pip install polymethod
 
 
 Building documentation
@@ -58,7 +58,7 @@ An example class would be
 
 .. code-block:: python
 
-   from overloading import overload, OverloadMeta, NoMatchingOverload
+   from polymethod import overload, OverloadMeta, NoMatchingOverload
    from typing import Tuple
 
    class API(metaclass=OverloadMeta):

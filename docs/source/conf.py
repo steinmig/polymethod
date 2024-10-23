@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 import sphinx_rtd_theme
-import overloading
+import polymethod
 import recommonmark
 import sys
 import pathlib
 from recommonmark.transform import AutoStructify
 
-project = "overloading"
+project = "polymethod"
 copyright = "James Murphy (MCODING LLC)"
 author = "Miguel Steiner"
 
-version = overloading.__version__
-release = overloading.__version__
+version = polymethod.__version__
+release = polymethod.__version__
 
 source_suffix = ['.rst']
 extensions = [
@@ -44,22 +44,22 @@ html_sidebars = {
         'searchbox.html',
     ]
 }
-htmlhelp_basename = 'overloading'
+htmlhelp_basename = 'polymethod'
 
 latex_documents = [
-    (master_doc, 'overloading.tex', 'overloading Documentation',
+    (master_doc, 'polymethod.tex', 'polymethod Documentation',
      'Contributors', 'manual'),
 ]
 
 man_pages = [
-    (master_doc, 'overloading', 'overloading Documentation',
+    (master_doc, 'polymethod', 'polymethod Documentation',
      [author], 1)
 ]
 
 
 texinfo_documents = [
-    (master_doc, 'overloading', 'overloading Documentation',
-     author, 'overloading', 'Python package for overloading methods of the same name.',
+    (master_doc, 'polymethod', 'polymethod Documentation',
+     author, 'polymethod', 'Python package for overloading methods of the same name.',
      'Miscellaneous'),
 ]
 
